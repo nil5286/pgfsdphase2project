@@ -1,0 +1,61 @@
+ create database flight;
+ 
+ create table User_Login (
+	username varchar(255) primary key,
+	password varchar(255) NOT Null
+ );
+ 
+  insert into User_Login values ('passenger1@booking.com','user1');
+  insert into User_Login values ('passenger2@booking.com','user2');
+  insert into User_Login values ('passenger3@booking.com','user3');
+
+ 
+ create table Admin_Login (
+	username varchar(255) primary key,
+	password varchar(255) NOT Null
+ );
+ 
+ insert into Admin_Login values ('admin@flyaway.com','aaa');
+ 
+ 
+  create table FlightDetails (
+	flightno varchar(255) primary key,
+	airlinename varchar(255) ,
+	price int ,
+	source varchar(255) ,
+	destination varchar(255) ,
+	departuretime Date ,
+	arrivaltime Date ,
+	totalseat int ,
+	bookedseat int ,
+    dateoftravel Date ,
+    seat_availibility int,
+	class varchar(255)
+	
+ );
+ 
+ insert into FlightDetails values ('FL101','Indigo','5000','Mumbai','Delhi','2022-08-20','2022-08-21',100,50,50,'Economy');
+ insert into FlightDetails values ('FL102','Indigo','8000','Mumbai','Delhi','2022-08-20','2022-08-21',100,50,50,'Business');
+  
+  
+  
+ create table RegisterDetails (
+	email varchar(255) primary key,
+	fullname varchar(255) ,
+	address varchar(255) ,
+	age int ,
+	mobile varchar(255) ,
+	seatno int ,
+	idtype varchar(255) ,
+	idno varchar(255) ,
+	country varchar(255)	
+ );
+ 
+ 
+ 
+  create table BookingDetails (
+	bookid int AUTO_INCREMENT  primary key,
+	email varchar(255) ,
+	flightno varchar(255)
+ );
+ 
